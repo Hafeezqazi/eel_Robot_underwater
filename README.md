@@ -1,5 +1,11 @@
 # 🐟 Bio-Inspired Underwater Eel Robot
 
+![Eel robot swimming and diving](output/eel_demo.gif)
+
+*The robot swimming with a travelling body wave and pitching into a dive —
+rendered straight from the CAD model (`cad/render_anim.py`). Open
+[`output/eel_design.html`](output/eel_design.html) for the live interactive 3D viewer.*
+
 A ~50 cm anguilliform (eel-style) underwater robot: a free-flooding, segmented
 body that swims with a travelling body wave, dives with bow planes, and carries a
 camera + light in a sealed head. Tethered, 3D-printable, desk/pool scale.
