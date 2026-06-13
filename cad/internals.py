@@ -40,9 +40,11 @@ def components():
               cq.Workplane("XY").cylinder(4, 4).translate((0, -7,
                                                            P.WINDOW_Z + 7))))
     # --- stability hardware (from analysis/stability.py) ---
-    # lead KEEL: low + forward, drops CG for roll & sets trim
+    # lead KEEL: low + forward, drops CG for roll & sets trim. Compact block
+    # (~same lead volume) sized so it stays BEHIND the nose face (z>=WINDOW_Z)
+    # instead of spiking out the front; centroid unchanged -> stability identical.
     C.append(("keel", "#2b2b2b",
-              _box(18, 11, 85, (0, P.KEEL_Y, P.KEEL_Z))))
+              _box(26, 16, 42, (0, P.KEEL_Y, P.KEEL_Z))))
     # NB: the buoyancy FOAM is NOT here -- it's a bore-fitting plug that lives
     # inside a flexing body segment, so callers add foam_plug() to that
     # segment's group (see design_page.build_geo) rather than the static frame.
