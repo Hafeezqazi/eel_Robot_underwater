@@ -15,3 +15,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+# HyperFrames video build (regenerate with: python cad/make_video.py)
+video/

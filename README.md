@@ -2,9 +2,10 @@
 
 ![Eel robot swimming and diving](output/eel_demo.gif)
 
-*The robot swimming with a travelling body wave and pitching into a dive —
-rendered straight from the CAD model (`cad/render_anim.py`). Open
-[`output/eel_design.html`](output/eel_design.html) for the live interactive 3D viewer.*
+*Travelling-wave swim, a bow-plane dive through the depth rings, and a see-through
+body showing the internals (battery, ESP32, foam, keel) — a deterministic
+**HyperFrames** render of the actual 3D scene (`cad/make_video.py`).
+▶ [Full-quality MP4](output/eel_demo.mp4) · 🖥️ [live interactive viewer](output/eel_design.html).*
 
 A ~50 cm anguilliform (eel-style) underwater robot: a free-flooding, segmented
 body that swims with a travelling body wave, dives with bow planes, and carries a
