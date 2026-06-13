@@ -1,0 +1,52 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Eel robot CFD case -- steady drag study (simpleFoam)                        |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     simpleFoam;
+
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+endTime         1000;          // iterations (steady)
+deltaT          1;
+
+writeControl    timeStep;
+writeInterval   200;
+purgeWrite      2;
+writeFormat     ascii;
+writePrecision  7;
+writeCompression off;
+timeFormat      general;
+timePrecision   6;
+runTimeModifiable true;
+
+functions
+{
+    forces
+    {
+        type            forceCoeffs;
+        libs            ("libforces.so");
+        writeControl    timeStep;
+        writeInterval   20;
+        patches         (body);
+        rho             rhoInf;
+        rhoInf          1000;          // water density [kg/m^3]
+        liftDir         (0 1 0);
+        dragDir         (0 0 1);       // flow is along +Z
+        CofR            (0 0 0.25);
+        pitchAxis       (1 0 0);
+        magUInf         0.5;           // must match 0/U inlet speed
+        lRef            0.5;           // body length [m]
+        Aref            0.00385;       // frontal area [m^2] (pi*0.035^2)
+    }
+}
+
+// ************************************************************************* //

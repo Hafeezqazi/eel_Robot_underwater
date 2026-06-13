@@ -1,0 +1,17 @@
+============================================================
+EEL ROBOT  --  SELF-PROPULSION (Lighthill EBT)
+============================================================
+  tail-beat freq        : 2.00 Hz
+  tail amplitude        : 59 mm
+  <(dh/dt)^2>           : 0.2714 (m/s)^2
+  <(dh/dx)^2>           : 0.0340
+  added mass / length   : 1.89 kg/m
+------------------------------------------------------------
+  EBT cruise speed (UB) : 1.068 m/s   (2.14 BL/s)   <- optimistic upper bound
+  expected (x0.5 derate): 0.534 m/s   (1.07 BL/s)   <- realistic estimate
+  thrust = drag at UB   : 219.3 mN
+  Strouhal @ UB speed   : 0.22
+  Strouhal @ realistic  : 0.44  (tune amp/freq)
+------------------------------------------------------------
+  cruise control inputs : f=2.0 Hz, peak joint amp=7 deg (mech max 28 deg in reserve)
+============================================================

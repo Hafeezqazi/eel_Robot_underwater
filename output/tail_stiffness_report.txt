@@ -1,0 +1,19 @@
+============================================================
+PASSIVE TAIL STIFFNESS  (rear 2 joints, no servo)
+============================================================
+tail-beat freq    : 2.0 Hz   target f_n = 2.50 Hz (x1.25)
+
+ joint z   I_struct   I+water  k(Nm/rad)  band N/m  TPU t(mm)
+     320     376.9u    979.8u      0.242      2418        4.0
+     380     118.7u    308.7u      0.076       762        2.8
+
+  Build options per passive joint (use the value for its z):
+   A) RUBBER BAND : pick a band whose rate ~ 'band N/m' at the post
+      (10 mm arm). Stack/shorten bands to raise the rate; measure it
+      (hang a known mass, read stretch).
+   B) TPU FLEXURE : print the inter-segment link in TPU ~'t mm' thick
+      x 10 mm wide x 8 mm long (living hinge).
+
+  Tune on the bench: pluck the assembled tail, time 10 swings ->
+  f_n; add/remove stiffness until f_n ~ 2.5 Hz.
+============================================================

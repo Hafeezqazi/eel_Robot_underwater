@@ -1,0 +1,15 @@
+========================================================
+CFD CASE SETUP  --  steady drag study (simpleFoam, kOmegaSST)
+========================================================
+  staged surface : D:\Codex_Projects\test_game_claude\eel_robot\cfd\constant\triSurface\cfd_hull.stl
+  body length L  : 0.500 m
+  inlet speed U  : 0.50 m/s   (set in 0/U)
+  Reynolds Re    : 2.500e+05   -> turbulent, kOmegaSST
+  frontal area   : 38.5 cm^2   (Cd_axial assumed 0.1)
+  analytic drag  : 48.1 mN  (compare to CFD forces)
+--------------------------------------------------------
+  this script only STAGES the case (geometry + Reynolds + a drag
+  estimate from the assumed Cd). Run the solve to MEASURE Cd:
+  next:  ./Allrun        (needs OpenFOAM in PATH)
+         postProcess -func forces  ->  drag coefficient
+========================================================

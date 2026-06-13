@@ -1,0 +1,7 @@
+#!/bin/sh
+cd "${0%/*}" || exit
+. "${WM_PROJECT_DIR:?}/bin/tools/CleanFunctions"
+cleanCase
+rm -rf constant/triSurface/cfd_hull.eMesh constant/extendedFeatureEdgeMesh
+rm -f constant/triSurface/cfd_hull.stl
+echo "case cleaned"

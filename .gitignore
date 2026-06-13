@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# PlatformIO / Arduino build artifacts
+.pio/
+*.ino.cpp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

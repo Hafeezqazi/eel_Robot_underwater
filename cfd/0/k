@@ -1,0 +1,25 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Eel robot CFD case -- turbulent kinetic energy (I=5%, U=0.5)                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 9.4e-4;
+
+boundaryField
+{
+    inlet    { type fixedValue; value uniform 9.4e-4; }
+    outlet   { type inletOutlet; inletValue uniform 9.4e-4; value uniform 9.4e-4; }
+    farfield { type slip; }
+    body     { type kqRWallFunction; value uniform 9.4e-4; }
+}
+
+// ************************************************************************* //

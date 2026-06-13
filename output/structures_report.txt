@@ -1,0 +1,28 @@
+============================================================
+EEL ROBOT  --  STRUCTURAL / SEALING CHECKS (PLA)
+============================================================
+depth rating = 2 m  ->  design pressure 19.6 kPa
+
+[1] HEAD-BAY PRESSURE HULL
+  inner radius / wall : 32.0 / 3.0 mm
+  hoop stress         :    0.209 MPa (yield 50) -> SF    239
+  buckling pressure   :    821.6 kPa            -> SF     42
+  => collapses at     :     83.8 m depth (rating 2 m)
+
+[2] JOINT PIN (double shear, worst-case stall torque)
+  reaction force      :    33.33 N
+  shear stress        :    2.358 MPa -> SF     13
+
+[3] O-RING SEAL
+  squeeze             :     25.0 %  (OK 15-30%)
+
+[4] LID CLAMP (3 M3 bolt ears; radial O-ring needs no clamp force)
+  handling pull       : 50 N over 3 ears = 16.7 N/ear
+  insert pull-out     : 200 N/insert -> SF   12.0
+  insert-edge wall    :      2.5 mm  (OK)
+============================================================
+verdict: all load paths have large margins at the 2 m rating;
+the bay is the limiter and is good to ~84 m before buckling.
+NOTE: analytic first-order only -- no FEA of clamp/penetrator/window
+bond peel, servo-boss loads, or cyclic fatigue (bench-confirm those).
+============================================================

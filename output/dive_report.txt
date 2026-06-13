@@ -1,0 +1,22 @@
+============================================================
+EEL ROBOT  --  DIVE-PLANE PERFORMANCE
+============================================================
+  planes: 2 x 70x45 mm  = 63.0 cm^2 total, AR 1.56
+  max Cl (stall 15 deg): 1.10
+  trim reserve buoyancy: 20 g = 196 mN (must be overcome to dive)
+------------------------------------------------------------
+  vertical force at full deflection vs forward speed:
+    V=0.40 m/s :    554 mN  ( 2.8x reserve)  -> DIVES
+    V=0.55 m/s :   1048 mN  ( 5.3x reserve)  -> DIVES
+------------------------------------------------------------
+  min forward speed to dive: 0.24 m/s
+  at V=0.55 m/s, full dive:
+    glide angle (1st order): 65 deg below horizontal
+    descent rate           : 498 mm/s
+    time to 2 m depth      : 4.0 s
+============================================================
+  LIMITATION: dive planes need forward flow -- ZERO authority at rest.
+  The robot holds depth by neutral trim and dives/climbs only while
+  swimming. To hover/descend at zero speed you'd need a variable-
+  buoyancy engine instead (see the dive-method options).
+============================================================

@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Eel robot CFD case -- background hex mesh (flow along +Z)                    |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+// body occupies z = 0 .. 0.5, centred on the x=y=0 axis (dia 0.07 m)
+vertices
+(
+    (-0.35 -0.35 -0.6)   // 0
+    ( 0.35 -0.35 -0.6)   // 1
+    ( 0.35  0.35 -0.6)   // 2
+    (-0.35  0.35 -0.6)   // 3
+    (-0.35 -0.35  1.6)   // 4
+    ( 0.35 -0.35  1.6)   // 5
+    ( 0.35  0.35  1.6)   // 6
+    (-0.35  0.35  1.6)   // 7
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (28 28 88) simpleGrading (1 1 1)
+);
+
+edges ();
+
+boundary
+(
+    inlet
+    {
+        type patch;
+        faces ( (0 3 2 1) );
+    }
+    outlet
+    {
+        type patch;
+        faces ( (4 5 6 7) );
+    }
+    farfield
+    {
+        type slip;
+        faces
+        (
+            (0 1 5 4)
+            (3 7 6 2)
+            (1 2 6 5)
+            (0 4 7 3)
+        );
+    }
+);
+
+mergePatchPairs ();
+
+// ************************************************************************* //

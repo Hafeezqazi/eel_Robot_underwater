@@ -1,0 +1,32 @@
+================================================================
+EEL ROBOT  --  CG vs CB STABILITY + TRIM
+================================================================
+dry mass          :   412.6 g
+displaces (flood) :   552.5 g  -> net +140 g (add ballast to neutral)
+
+                        x(mm)   y(mm)   z(mm from nose)
+  CG (mass)          :    0.1    -1.4    193.0
+  CB (buoyancy)      :   0.0     0.0      126.6   (on the axis)
+
+[ROLL]  need CB above CG  ->  CG must be BELOW the axis (y<0)
+  CG vertical        : -1.4 mm   (STABLE, CB is +1.4 mm above CG)
+[TRIM]  need CG aligned with CB fore/aft (same z)
+  CG - CB (z)        : +66.4 mm   (trims tail-down (nose-up) at rest)
+
+[FIX APPLIED]  foam 59 cm^3 @ z311  +  lead keel 197 g @ z40 (low)
+  wet mass / displaces :    611 g /    611 g  -> net -0 g
+  CG : x  0.0  y -8.0  z 144.0 mm
+  CB : x  0.0   y +0.0  z 144.3 mm
+  ROLL margin (CB above CG): +8.0 mm  (stable)
+  TRIM offset (CG-CB z)    : -0.3 mm  -> rest pitch ~2 deg
+
+  NOTE: near-neutral vehicles are trim-SENSITIVE (small CG-CB separation).
+  Design gets it close; set LEVEL in the water with a small MOVABLE
+  trim weight / sliding battery. Keel sets ROLL, movable weight sets
+  PITCH. Standard AUV practice -- a fixed design can't be perfectly
+  level, so a trim provision is part of being build-ready.
+================================================================
+verdict: with foam + keel it is ROLL-STABLE and near-level; finish
+  pitch in water with the adjustable weight. Baseline (no fix) floats
+  nose-up and rolls easily -- the fix is necessary, not optional.
+================================================================

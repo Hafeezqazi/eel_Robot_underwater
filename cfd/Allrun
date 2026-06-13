@@ -1,0 +1,16 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # run from this dir
+. "${WM_PROJECT_DIR:?}/bin/tools/RunFunctions"       # OpenFOAM helpers
+
+# stage the hull surface from ../output (needs python + cad/hull_solid.py)
+python case_setup.py || cp ../output/cfd_hull.stl constant/triSurface/
+
+runApplication blockMesh
+runApplication surfaceFeatureExtract
+runApplication snappyHexMesh -overwrite
+runApplication checkMesh -allTopology -allGeometry
+runApplication renumberMesh -overwrite
+runApplication simpleFoam
+
+echo "Done. Drag history -> postProcessing/forces/0/coefficient.dat"
+echo "Final Cd is the 'Cd' column once residuals have converged."

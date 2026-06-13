@@ -1,0 +1,58 @@
+================================================================
+EEL ROBOT  --  FIRST-ORDER SIZING REPORT
+================================================================
+water = fresh (rho 1000 kg/m^3),  speed = 0.30 m/s
+
+[1] GEOMETRY
+  displaced volume :   1104.8 cm^3
+  wetted area      :    770.7 cm^2
+  frontal area     :    38.48 cm^2
+
+[2] MASS / BUOYANCY BUDGET  (neutral target)
+    shell (PLA)     :   119.5 g
+    servos x4       :    56.0 g
+    battery         :    30.0 g
+    electronics     :    55.0 g
+    hardware        :    20.0 g
+    skin+tailfin    :    85.0 g
+    dive planes     :    26.0 g
+    ------------------------------
+    DRY MASS        :   391.5 g
+  option A -- FULLY SEALED body:
+    displaces        :  1104.8 g water
+  => ADD BALLAST     :   713.3 g  (heavy ballast needed)
+  option B -- FREE-FLOODING tail (only head bay dry) [RECOMMENDED]:
+    displaces        :   599.9 g water
+  => LEAD KEEL       :   208.4 g  (low+fwd; also sets roll/trim -- see stability.py)
+     reserve buoyancy: aim ~2-5% (18 g) trim margin
+
+[3] HYDRODYNAMICS (cruise)
+  drag force       :    17.32 mN
+  ideal thrust pwr :     5.20 mW
+  prop. power (eta=0.40):    12.99 mW
+
+[4] GAIT (Strouhal St=0.30)
+  tail-beat freq   :     2.00 Hz
+  peak ang. vel    :      352 deg/s
+  amplitude (tail) :       50 mm
+  traveling-wave joint phase offsets:
+    joint 1 @ z=140mm :  100.8 deg
+    joint 2 @ z=200mm :  144.0 deg
+    joint 3 @ z=260mm :  187.2 deg
+    joint 4 @ z=320mm :  230.4 deg
+    joint 5 @ z=380mm :  273.6 deg
+
+[5] SERVO TORQUE DEMAND vs RATED (0.20 N*m)
+    joint 1 :    5.07 mN*m   OK
+    joint 2 :    4.69 mN*m   OK
+    joint 3 :    3.89 mN*m   OK
+  worst-case margin :  39.5x
+
+[6] POWER / ENERGY
+  hotel load       :      2.0 W
+  servos (3x0.8W + dive 0.3W): 2.7 W
+  LED headlight    :      2.0 W (avg; W command dims)
+  TOTAL electrical :      6.7 W
+  energy / 30 min :      3.4 Wh
+  bus current @7.4V:     0.91 A (size tether/battery for this)
+================================================================

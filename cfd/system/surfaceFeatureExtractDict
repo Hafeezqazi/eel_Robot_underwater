@@ -1,0 +1,21 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Eel robot CFD case -- extract feature edges from the hull surface           |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+cfd_hull.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs { includedAngle 150; }
+    subsetFeatures      { nonManifoldEdges no; openEdges yes; }
+    writeObj            yes;
+}
+
+// ************************************************************************* //

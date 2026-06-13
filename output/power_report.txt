@@ -1,0 +1,33 @@
+==============================================================
+ELECTRICAL  --  peak current, brownout, tether drop
+==============================================================
+servos                 : 4  (3 joint + 1 dive)
+per-servo run / stall  : 0.25 A / 1.00 A
+typical active draw    : 1.70 A  (servos moving + hotel + LED)
+WORST-CASE peak        : 4.0 A  (all servos stall at once)
+
+[BROWNOUT PROTECTION]
+  * ESP32 + logic on their OWN 3.3 V buck off the bus -- NOT sharing
+    the servo rail (servo droop must not reset the MCU).
+  * bulk capacitor across the servo bus: 1000-2200 uF, 11 V+
+    (holds the rail through stall spikes).
+  * fuse the servo bus at ~4 A; fuse the LED separately.
+
+[TETHER VOLTAGE DROP]  round-trip drop at the typical + peak current
+  5 m tether, drop = I x (2 x rho x L / A):
+    AWG   R(ohm)   drop@typ   drop@peak
+     24    0.839      1.43V       3.36V
+     22    0.528      0.90V       2.11V
+     20    0.332      0.56V       1.33V
+     18    0.209      0.36V       0.84V
+
+  => At 5-6 V on the tether the drop is unacceptable on thin wire.
+     FIX (recommended): run the tether at ~12 V, regulate to 5-6 V
+     AT THE ROBOT with a buck. Half the current -> a quarter the loss,
+     and AWG20-22 power pairs are then fine. Otherwise use AWG18 power
+     conductors and keep the run short.
+==============================================================
+verdict: size the supply for the ~4 A PEAK, not the 6 W average;
+  isolate the MCU rail + bulk cap to stop brownout; send 12 V down the
+  tether and buck at the robot to beat voltage drop.
+==============================================================

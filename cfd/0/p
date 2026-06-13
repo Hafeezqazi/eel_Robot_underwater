@@ -1,0 +1,25 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| Eel robot CFD case -- kinematic pressure (p = P/rho)                         |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    inlet    { type zeroGradient; }
+    outlet   { type fixedValue; value uniform 0; }
+    farfield { type slip; }
+    body     { type zeroGradient; }
+}
+
+// ************************************************************************* //

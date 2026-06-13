@@ -1,0 +1,32 @@
+==============================================================
+DIVE-PLANE LINKAGE  --  kinematics + holding torque
+==============================================================
+drive: servo horn (rocker) -> push-rod (coupler) -> crank on the rod
+build as a PARALLELOGRAM: crank arm = rocker arm = 8 mm,
+  coupler = rod-to-servo offset = 15 mm, arms parallel.
+
+[1] KINEMATICS  (servo angle -> plane angle)
+    servo   plane   transmission
+   -25.0d  -25.0d        65.0 deg
+   -12.5d  -12.5d        77.5 deg
+     0.0d    0.0d        90.0 deg
+    12.5d   12.5d        77.5 deg
+    25.0d   25.0d        65.0 deg
+  ratio              : 1.000  (1:1, exact for a parallelogram)
+  loop-closure error : 0.0000 deg  (numeric cross-check)
+  min transmission   : 65 deg  (healthy 40-140; dead-point only at +/-90)
+  servo travel needed: +/-25 deg of +/-90 available -> 65 deg spare each side
+
+[2] HOLDING TORQUE  (cruise 0.55 m/s, both planes at stall AoA)
+  plane lift (2 fins): 1.29 N
+  hinge moment arm   : 5.4 mm  (CoP 0.40c vs shaft 0.28c)
+  hinge moment       : 6.9 mN*m about the rod
+  servo torque needed: 6.9 mN*m  (1:1 linkage)
+  servo rated        : 200 mN*m  -> MARGIN x29
+==============================================================
+verdict: parallelogram linkage transfers the full +/-25 deg pitch 1:1
+  with no dead-point; the servo holds the planes with a large torque
+  margin. Keep the rod near ~0.28 chord (close to the CoP) so the hinge
+  moment stays small; the hull bushings carry the radial load, not the
+  servo.
+==============================================================
