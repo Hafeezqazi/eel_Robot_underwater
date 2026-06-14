@@ -8,3 +8,8 @@ eel_viewer.html   linguist-generated=true
 index.html        linguist-vendored=true
 output/**         linguist-generated=true
 *.drawio          linguist-vendored=true
+
+# Generated CAD exports (meshes / solids) are data, not source code
+*.stl             linguist-generated=true
+*.step            linguist-generated=true
+*.stp             linguist-generated=true
