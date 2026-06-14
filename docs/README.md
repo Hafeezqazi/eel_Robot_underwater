@@ -237,15 +237,15 @@ Fusion 360, or Onshape. STEP imports as a full solid assembly.
 
 ## 5. Division of labor
 
-**I (Claude) produced / can iterate on:** all parametric CAD scripts + the
-revolute joints, the physics/sizing math, the gait generator + ESP32 firmware,
-the wiring diagram, the BOM, and these docs. Send me run output, errors, or
-screenshots and I'll refine any of it.
+**Software / design (in this repo):** all parametric CAD scripts + the revolute
+joints, the physics/sizing math, the gait generator + ESP32 firmware, the wiring
+diagram, the BOM, and these docs — all parametric, so any parameter change
+re-derives the geometry and the analysis.
 
-**You (human) must do:** run the scripts, inspect/print the STLs, buy parts,
-assemble, waterproof the head bay, wire & solder, run CFD on your machine if
-desired, and do the physical pool testing. Organic skin/nose surfacing is the
-one CAD piece best done by hand in a GUI — I can't drive a GUI.
+**Physical build (off-repo):** run the scripts, inspect/print the STLs, buy
+parts, assemble, waterproof the head bay, wire & solder, run CFD if desired, and
+do the physical pool testing. Organic skin/nose surfacing is the one CAD piece
+best done by hand in a GUI.
 
 ---
 
