@@ -5,7 +5,12 @@
 *Travelling-wave swim, a bow-plane dive through the depth rings, and a see-through
 body showing the internals (battery, ESP32, foam, keel) — a deterministic
 **HyperFrames** render of the actual 3D scene (`cad/make_video.py`).
-▶ [Full-quality MP4](output/eel_demo.mp4) · 🖥️ [live interactive viewer](output/eel_design.html).*
+▶ [Full-quality MP4](output/eel_demo.mp4).*
+
+### 🖥️ [▶ Open the live 3D viewer &amp; datasheet](https://hafeezqazi.github.io/eel_Robot_underwater/)
+*Runs right in your browser — interactive 3D model, internals, motion, and all the
+engineering numbers. No install. (Or open `eel_design.html` / `eel_viewer.html`
+straight from the repo root.)*
 
 A ~50 cm anguilliform (eel-style) underwater robot: a free-flooding, segmented
 body that swims with a travelling body wave, dives with bow planes, and carries a
@@ -14,12 +19,12 @@ camera + light in a sealed head. Tethered, 3D-printable, desk/pool scale.
 This repo is a **complete digital design package** — parametric CAD,
 first-principles engineering analysis, ESP32 control firmware, full build docs,
 and a researched BOM. The whole pipeline regenerates and self-checks at
-**28/28** (`python verify_all.py`), and it passed four rounds of independent
-review. It is a *verified design*, not yet a physically-built robot.
+**28/28** (`python verify_all.py`). It is a *verified design*, not yet a
+physically-built robot.
 
 ### Start here
 - 📄 **[Full design report](PROJECT_REPORT.md)** — the story + every decision, in plain language.
-- 🖥️ **Interactive viewer + datasheet** — open [`output/eel_design.html`](output/eel_design.html) in any browser (3D model, internals, all the numbers; no install).
+- 🖥️ **[Interactive viewer + datasheet](https://hafeezqazi.github.io/eel_Robot_underwater/)** — live in your browser (3D model, internals, all the numbers; no install), or open [`eel_design.html`](eel_design.html) from the repo root.
 - 🛠️ **[Build guide](docs/build_guide.md)** · 🧾 **[BOM](docs/BOM.md)** · 🏭 **[Manufacturing](docs/manufacturing.md)** · 🔌 **[Wiring](docs/wiring_pinout.md)**
 
 ### Reproduce it

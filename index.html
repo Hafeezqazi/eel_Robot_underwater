@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bio-Inspired Eel Robot</title>
+<style>
+  :root{color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#dbe8f7;
+    background:radial-gradient(120% 120% at 50% 12%,#16314d 0%,#0c1320 55%,#070b12 100%)}
+  .wrap{max-width:760px;width:92%;padding:40px 0;text-align:center}
+  h1{font-size:clamp(28px,5vw,46px);margin:.2em 0 .1em;font-weight:800;letter-spacing:.2px}
+  .sub{color:#7fb2e6;font-size:clamp(15px,2.4vw,19px);margin:0 0 26px;font-weight:600}
+  img{width:100%;max-width:680px;border-radius:14px;border:1px solid #20344d;
+    box-shadow:0 18px 50px rgba(0,0,0,.45);margin-bottom:28px}
+  .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  a.btn{display:inline-block;padding:14px 22px;border-radius:11px;text-decoration:none;
+    font-weight:700;font-size:16px;transition:transform .12s ease,background .12s ease}
+  a.btn:hover{transform:translateY(-2px)}
+  .primary{background:#2f6fe0;color:#fff}
+  .primary:hover{background:#3f80f2}
+  .ghost{background:#172234;color:#cfe0f5;border:1px solid #2a405d}
+  .ghost:hover{background:#1d2c44}
+  .meta{margin-top:26px;color:#6f8aa6;font-size:13.5px;line-height:1.7}
+  .meta b{color:#9fb6d2}
+  a.txt{color:#7fb2e6;text-decoration:none}a.txt:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>🐟 Bio-Inspired Eel Robot</h1>
+    <p class="sub">anguilliform underwater robot · travelling-wave swim · bow-plane dive</p>
+    <a href="eel_design.html"><img src="output/eel_demo.gif" alt="Eel robot swimming and diving"></a>
+    <div class="btns">
+      <a class="btn primary" href="eel_design.html">🖥️ Open the 3D viewer + datasheet</a>
+      <a class="btn ghost" href="eel_viewer.html">🔄 Simple 3D viewer</a>
+      <a class="btn ghost" href="https://github.com/Hafeezqazi/eel_Robot_underwater">📦 Source on GitHub</a>
+    </div>
+    <p class="meta">
+      Free-flooding segmented body · 3 driven joints + passive tail · dive planes ·
+      sealed head with camera + light.<br>
+      <b>Predicted:</b> ~0.5 m/s cruise · 2 Hz tail-beat · neutral buoyancy · rated to 2 m.<br>
+      Full write-up: <a class="txt" href="https://github.com/Hafeezqazi/eel_Robot_underwater/blob/main/PROJECT_REPORT.md">PROJECT_REPORT.md</a>
+      · <a class="txt" href="https://github.com/Hafeezqazi/eel_Robot_underwater/blob/main/docs/build_guide.md">build guide</a>
+    </p>
+  </main>
+</body>
+</html>

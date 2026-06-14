@@ -366,6 +366,10 @@ def main():
     path = os.path.normpath(os.path.join(OUT, "eel_design.html"))
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(html)
+    # mirror to the repo root so it opens straight from the main repo page
+    root = os.path.normpath(os.path.join(OUT, "..", "eel_design.html"))
+    with open(root, "w", encoding="utf-8") as fh:
+        fh.write(html)
     kb = os.path.getsize(path) / 1024
     print(f"[ok] {path}")
     print(f"     {len(data['items'])} catalogued parts, ${total} total, "

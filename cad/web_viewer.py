@@ -322,6 +322,10 @@ def main():
     path = os.path.normpath(os.path.join(OUT, "eel_viewer.html"))
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(html)
+    # mirror to the repo root so it opens straight from the main repo page
+    root = os.path.normpath(os.path.join(OUT, "..", "eel_viewer.html"))
+    with open(root, "w", encoding="utf-8") as fh:
+        fh.write(html)
     ntri = sum(len(m["idx"]) // 3 for m in data["base"] + data["dive"]
                + data["tail"]) + sum(len(p["idx"]) // 3
                                      for s in data["seg"] for p in s)
