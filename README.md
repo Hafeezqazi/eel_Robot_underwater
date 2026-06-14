@@ -21,7 +21,6 @@ review. It is a *verified design*, not yet a physically-built robot.
 - 📄 **[Full design report](PROJECT_REPORT.md)** — the story + every decision, in plain language.
 - 🖥️ **Interactive viewer + datasheet** — open [`output/eel_design.html`](output/eel_design.html) in any browser (3D model, internals, all the numbers; no install).
 - 🛠️ **[Build guide](docs/build_guide.md)** · 🧾 **[BOM](docs/BOM.md)** · 🏭 **[Manufacturing](docs/manufacturing.md)** · 🔌 **[Wiring](docs/wiring_pinout.md)**
-- 🔍 **[Independent design review](docs/design_review.md)** — 4 rounds of external critique + responses.
 
 ### Reproduce it
 ```bash

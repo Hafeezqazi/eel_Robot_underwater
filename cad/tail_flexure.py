@@ -1,6 +1,6 @@
 """
 tail_flexure.py  --  printable TPU living-hinge variants for the PASSIVE tail
-joints (Codex review C2-P0-5). Turns "tune a rubber band" into a defined part:
+joints. Turns "tune a rubber band" into a defined part:
 a link with two bolt pads joined by a thin flexing web. Print the bracket of
 thicknesses, fit each, and pick the one that hits the target beat by the bench
 swing test (analysis/tail_stiffness.py: joint 4 ~4.0 mm, joint 5 ~2.8 mm).

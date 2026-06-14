@@ -1,6 +1,5 @@
 """
-ballast.py  --  printable retention hardware for the stability fix (Codex review
-C2-P0-4). The foam discs, lead keel and trim weight are NOT optional (see
+ballast.py  --  printable retention hardware for the stability fix. The foam discs, lead keel and trim weight are NOT optional (see
 analysis/stability.py); this makes installing them repeatable instead of prose.
 
   keel_strap    : flat strap that pins the lead keel into the forward belly

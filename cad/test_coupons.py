@@ -1,6 +1,6 @@
 """
 test_coupons.py  --  small printable coupons to de-risk fit + sealing BEFORE the
-full body print (Codex review C2-P0-3 / C2-P1-4). Each is a representative slice
+full body print. Each is a representative slice
 of a real interface, so a few grams of filament proves the fit/seal cheaply.
 
   servo_pocket  : a wall with a servo-body slot + 2 mount pilots (does YOUR

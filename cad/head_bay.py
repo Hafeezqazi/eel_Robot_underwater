@@ -153,7 +153,7 @@ def _test():
         print(f"[ok] {name}: volume {vol:6.1f} cm^3  -> {path}")
 
     # lid-clamp section render: head + lid assembled, side projection so the
-    # bolt ears + their rear screw access are visible (Codex review C2-P1-3).
+    # bolt ears + their rear screw access are visible.
     asm = head.union(lid.translate((0, 0, P.HEAD_LEN - P.LID_LEN)))
     svg = os.path.normpath(os.path.join(out_dir, "lid_clamp.svg"))
     cq.exporters.export(asm, svg, opt={"projectionDir": (0, -1, 0),

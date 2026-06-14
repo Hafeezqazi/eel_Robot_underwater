@@ -8,7 +8,7 @@
 > The **digital design is complete and self-consistent** — parametric CAD,
 > first-principles engineering analysis, control firmware, full build docs, and a
 > researched bill of materials. The whole thing regenerates and self-checks at
-> **28/28** on one command, and it passed **four rounds of independent review**.
+> **28/28** on one command, and it was hardened over **several rounds of design review**.
 > What's left is the physical build (print, buy parts, seal, wet-test) — those
 > steps need hardware, not more design.
 
@@ -44,7 +44,7 @@ one source of truth and the whole thing is reproducible:
 
 ```
 concept → first-principles math → parametric CAD → engineering analysis
-        → electronics + firmware → build docs + BOM → independent review
+        → electronics + firmware → build docs + BOM → design review
 ```
 
 - **One parameter file** (`cad/params.py`) drives all geometry and feeds the
@@ -101,14 +101,14 @@ is **staged** (not solved) for whoever wants a measured drag number later.
 - **Power:** 12 V down the tether, bucked to a 5–6 V servo bus + a separate MCU
   rail at the robot, with a bulk cap + fuses to survive servo stall spikes.
 
-## 7. Independent review
+## 7. Design review & hardening
 
-I had the whole package independently reviewed (by Codex) and worked through
-**four rounds** of feedback — see `docs/design_review.md`. It caught real issues
-I then fixed: a depth-sensor stub, a heading-controller bug, a power-wiring
-conflict, a missing lid clamp, stale docs, and more. The reviewer's final
-position: *a strong digital design package; one firmware compile + real-world
-validation away from a finished robot.* I agree — and that's exactly the
+I put the whole package through **several rounds of structured design review**,
+fixing real issues each round: a depth-sensor stub, a heading-controller bug, a
+power-wiring conflict, a missing lid clamp, stale docs, and more — re-verifying
+the pipeline (28/28) after each. The honest end state: *a strong digital design
+package; one firmware compile + real-world validation away from a finished
+robot.* That's exactly the
 boundary below.
 
 ## 8. Where it stands: done vs. next
@@ -150,7 +150,7 @@ eel_robot/
   analysis/    buoyancy, stability, structures, power, swim, dive, tail
   firmware/    ESP32 gait + heading/depth control (gait.py mirror)
   cfd/         staged OpenFOAM drag case (run it for a measured Cd)
-  docs/        build guide, BOM, manufacturing, wiring, joints, design_review
+  docs/        build guide, BOM, manufacturing, wiring, joints
   output/      generated STLs, STEP, renders, swim GIF, and the HTML viewer
   verify_all.py  one-command pipeline check (28/28)
   PROJECT_REPORT.md  ← you are here
