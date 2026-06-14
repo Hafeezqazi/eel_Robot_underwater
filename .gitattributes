@@ -1,0 +1,10 @@
+# GitHub language stats (Linguist):
+# The substance of this project is the Python / CadQuery CAD + analysis and the
+# ESP32 firmware. The HTML files are GENERATED 3D viewers (emitted by
+# cad/design_page.py and cad/web_viewer.py) and are huge only because they embed
+# the 3D mesh data — they should NOT count as the repo's language.
+eel_design.html   linguist-generated=true
+eel_viewer.html   linguist-generated=true
+index.html        linguist-vendored=true
+output/**         linguist-generated=true
+*.drawio          linguist-vendored=true
